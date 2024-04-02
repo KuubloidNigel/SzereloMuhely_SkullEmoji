@@ -7,6 +7,7 @@ use App\Http\Controllers\SzereloController;
 
 Route::get('/home', function () { return view('home');}) -> name('home');
 Route::get('/munkalap', function () { return view('munkalap.index');}) -> name('munkalap.index');
+Route::get('/munkalap/create', function () { return view('munkalap.create');}) -> name('munkalap.create');
 
 Route::get('/login', [AuthManager::class, 'login']) ->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost']) ->name('login.post');
