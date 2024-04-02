@@ -10,34 +10,38 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'user',
+            'provider' => 'users',
         ],
-        
-    'szerelo' => [
-        'driver' => 'session',
-        'provider' => 'szerelo', 
+        'szerelo' => [
+            'driver' => 'session',
+            'provider' => 'szerelo', 
         ],
-
-    'munkafelvevo' => [
-        'driver' => 'session',
-        'provider' => 'munkafelvevo',
+    
+        'munkafelvevo' => [
+            'driver' => 'session',
+            'provider' => 'munkafelvevo',
         ],
     ],
 
     'providers' => [
-        // 'users' => [
-        //     'driver' => 'eloquent',
-        //     'model' => App\Models\User::class,
-        // ],
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
         'szerelo' => [
             'driver' => 'eloquent',
             'model' => App\Models\Szerelo::class,
         ],
-    
+
         'munkafelvevo' => [
             'driver' => 'eloquent',
             'model' => App\Models\Munkafelvevo::class,
         ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
     ],
 
     'passwords' => [
