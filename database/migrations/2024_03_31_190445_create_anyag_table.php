@@ -8,15 +8,16 @@ class CreateAnyagTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('anyag', function(Blueprint $table) {
+		Schema::create('anyags', function(Blueprint $table) {
 			$table->id();
-			$table->string('nev', 10);
+			$table->string('nev', 100);
 			$table->integer('ar');
+			$table->timestamps();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('anyag');
+		Schema::drop('anyags');
 	}
 }

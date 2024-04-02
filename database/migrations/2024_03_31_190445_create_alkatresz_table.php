@@ -8,15 +8,16 @@ class CreateAlkatreszTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('alkatresz', function(Blueprint $table) {
+		Schema::create('alkatreszs', function(Blueprint $table) {
 			$table->id();
-			$table->string('nev', 10);
+			$table->string('nev', 100);
 			$table->integer('ar');
+			$table->timestamps();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('alkatresz');
+		Schema::drop('alkatreszs');
 	}
 }

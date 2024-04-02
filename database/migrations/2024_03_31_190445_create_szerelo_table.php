@@ -8,15 +8,17 @@ class CreateSzereloTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('szerelo', function(Blueprint $table) {
-			$table->char('azonosito', 6)->primary();
-			$table->string('nev', 10);
-			$table->string('jelszo', 10);
+		Schema::create('szerelos', function(Blueprint $table) {
+			$table->id();
+			$table->char('azonosito', 6)->index();
+			$table->string('nev', 100);
+			$table->string('jelszo', 100);
+			$table->timestamps();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('szerelo');
+		Schema::drop('szerelos');
 	}
 }

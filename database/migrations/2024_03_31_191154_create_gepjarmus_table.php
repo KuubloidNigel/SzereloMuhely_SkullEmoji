@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gepjarmu', function (Blueprint $table) {
+        Schema::create('gepjarmus', function (Blueprint $table) {
             $table->string('rendszam',7)->primary();
             $table->string('gyartmany', 30);
             $table->string('tipus', 30);
             $table->foreignId('tulaj_id')->constrained('tulajdonos')->onUpdate('cascade')->onDelete('cascade');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 

@@ -10,8 +10,9 @@ class CreateTulajdonosTable extends Migration {
 	{
 		Schema::create('tulajdonos', function(Blueprint $table) {
 			$table->id();
-			$table->string('nev', 10);
+			$table->string('nev', 100);
 			$table->string('cim', 30);
+			$table->timestamps();
 		});
 	}
 

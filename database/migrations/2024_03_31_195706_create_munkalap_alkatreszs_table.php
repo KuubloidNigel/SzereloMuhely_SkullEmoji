@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('munkalap_alkatresz', function (Blueprint $table) {
+        Schema::create('munkalap_alkatreszs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('munkalap_id')->constrained('munkalap')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('alkatresz_id')->constrained('alkatresz')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('munkalap_id')->constrained('munkalaps')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('alkatresz_id')->constrained('alkatreszs')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('mennyiseg');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('munkalap_alkatresz');
+        Schema::dropIfExists('munkalap_alkatreszs');
     }
 };

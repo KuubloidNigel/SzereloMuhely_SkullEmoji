@@ -11,18 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('munkalap', function (Blueprint $table) {
+        Schema::create('munkalaps', function (Blueprint $table) {
             $table->id();
             $table->char('szerelo_azonosito',6);
-            $table->foreign('szerelo_azonosito')->references('azonosito')->on('szerelo')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('szerelo_azonosito')->references('azonosito')->on('szerelos')->onUpdate('cascade')->onDelete('cascade');
             $table->string('datum',10);
             $table->char('munkafelvevo_azonosito',6);
-            $table->foreign('munkafelvevo_azonosito')->references('azonosito')->on('munkafelvevo')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('munkafelvevo_azonosito')->references('azonosito')->on('munkafelvevos')->onUpdate('cascade')->onDelete('cascade');
             $table->string('gepjarmu_rendszam',7);
-            $table->foreign('gepjarmu_rendszam')->references('rendszam')->on('gepjarmu')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('gepjarmu_rendszam')->references('rendszam')->on('gepjarmus')->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('lezart');
             $table->integer('osszar');
             $table->string('fizetesi_mod',10);
+            $table->timestamps();
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('munkalap');
+        Schema::dropIfExists('munkalaps');
     }
 };

@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Munkafelvevo extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['nev','jelszo'];
+    protected $table = "munkafelvevos";
+    protected $fillable = ['nev','azonosito','jelszo'];
 
     public function munkafelvevo(): HasMany
     {
