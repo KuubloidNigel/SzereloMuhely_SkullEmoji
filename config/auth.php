@@ -28,15 +28,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'szerelo' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Szerelo::class,
-        ],
-
-        'munkafelvevo' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Munkafelvevo::class,
-        ],
 
         // 'users' => [
         //     'driver' => 'database',

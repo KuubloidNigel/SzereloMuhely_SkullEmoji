@@ -2,7 +2,18 @@
 @section('title', 'Szerelomuhely | Login')
 @section('content')
     <div class='container' style="top:200px; position:relative;">
-      <form action="{{route('login.post')}}" method="POST" class="ms-auto me-auto mt-auto" style="width: 500px" >
+    <div class="mt-5">
+        @if($errors->any())
+        <div class="col-12">
+            @foreach($errors->all() as $error)
+                <div class="alert alert-danger">
+                    {{$error}}
+                </div>
+            @endforeach
+        </div>
+        @endif
+    </div>
+    <form action="{{route('login.post')}}" method="POST" class="ms-auto me-auto mt-auto" style="width: 500px" >
       @csrf
         <div class="mb-3">
           <label class="form-label">Azonosító</label>
